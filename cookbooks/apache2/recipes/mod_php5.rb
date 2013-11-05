@@ -76,3 +76,13 @@ apache_module "php5" do
     filename "libphp5.so"
   end
 end
+
+# Tweak to allow customization of the apache php.ini courtesy of
+# @chipadeedoodah in #vagrant irc
+template '/etc/php5/apache2/php.ini' do
+  source 'php.ini.erb'
+  cookbook 'php'
+  owner 'root'
+  group 'root'
+  mode '0644'
+end

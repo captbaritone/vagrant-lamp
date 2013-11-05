@@ -47,5 +47,20 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "vagrant_main::drupal"
     chef.add_recipe "vagrant_main::magento"
     chef.add_recipe "vagrant_main::nodejs"
+
+    chef.json = {
+      "php" => {
+        "directives" => {
+          # Set custom PHP directives
+          "display_errors" => "On",
+          "display_startup_errors" => "On",
+          "error_reporting" => "-1",
+          "log_errors" => "On"
+        }
+      },
+      "mysql" => {
+        "server_root_password" => "vagrant"
+      }
+    }
   end
 end
