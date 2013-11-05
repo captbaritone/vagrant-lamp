@@ -23,7 +23,7 @@ include_recipe "database::mysql"
 end
 
 # Install ruby gems
-%w{ rdoc rake mailcatcher }.each do |a_gem|
+%w{ rdoc rake mailcatcher compass }.each do |a_gem|
   gem_package a_gem
 end
 
