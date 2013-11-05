@@ -65,7 +65,10 @@ you may specify a docroot explicitly by adding a docroot key in the json file.
 
 ### MySQL
 
-The guests local 3306 port is available on the host at port 33066. It is also available on every domain. Logging in can be done with username=root, password=vagrant.
+The guests local 3306 port is available on the host at port 33066. It is also
+available on every domain. Logging in can be done with username=root,
+password=vagrant. If you specify a database key in your `data_bags/sites/`
+file, a database will be created with that name.
 
 ### phpMyAdmin
 

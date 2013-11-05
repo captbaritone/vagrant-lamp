@@ -14,6 +14,8 @@ include_recipe "apache2::mod_php5"
 include_recipe "composer"
 include_recipe "phing"
 include_recipe "php-box"
+include_recipe "database"
+include_recipe "database::mysql"
 
 # Install packages
 %w{ debconf vim screen tmux mc subversion curl make g++ libsqlite3-dev graphviz libxml2-utils lynx links}.each do |a_package|
@@ -55,6 +57,18 @@ sites.each do |name|
    # Add site info in /etc/hosts
    bash "hosts" do
      code "echo 127.0.0.1 #{site["host"]} #{site["aliases"].join(' ')} >> /etc/hosts"
+   end
+
+   # Add mysql database
+   if site.has_key?('database')
+     mysql_database site["database"] do
+       connection(
+         :host     => 'localhost',
+         :username => 'root',
+         :password => node['mysql']['server_root_password']
+       )
+       action :create
+     end
    end
 end
 

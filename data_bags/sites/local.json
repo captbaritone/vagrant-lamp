@@ -1,6 +1,7 @@
 {
     "id": "local",
     "host": "local.dev",
+    "database": "local",
     "aliases": [
         "www.local.dev", 
         "test.com",
