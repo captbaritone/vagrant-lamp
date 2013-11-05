@@ -5,6 +5,7 @@
   RewriteEngine On
   
   <Directory <%= @params[:docroot] %>>
+    SetEnv ENVIRONMENT vagrantlamp
     Options FollowSymLinks
     AllowOverride All
     Order allow,deny
@@ -40,6 +41,7 @@
   RewriteEngine On
   
   <Directory <%= @params[:docroot] %>>
+    SetEnv ENVIRONMENT vagrantlamp
     Options FollowSymLinks
     AllowOverride All
     Order allow,deny
