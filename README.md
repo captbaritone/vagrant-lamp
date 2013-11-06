@@ -10,10 +10,6 @@ Download and install [VirtualBox](http://www.virtualbox.org/)
 
 Download and install [vagrant](http://vagrantup.com/)
 
-Download a vagrant box (name of the box is supposed to be precise32)
-
-    $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
-
 Clone this repository
 
 Go to the repository folder and launch the box
